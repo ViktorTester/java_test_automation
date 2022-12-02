@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
-public class AbstractStart {
-    private static WebDriver driver;
+public class AbstractTest {
+    private static WebDriver webDriver;
 
     @BeforeAll
     static void init() {
@@ -19,20 +19,20 @@ public class AbstractStart {
         options.addArguments("--incognito");
         options.addArguments("start-maximized");
 
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        webDriver = new ChromeDriver(options);
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
-        Assertions.assertDoesNotThrow( ()-> driver.navigate().to("http://selenium1py.pythonanywhere.com"),
+        Assertions.assertDoesNotThrow( ()-> webDriver.navigate().to("http://selenium1py.pythonanywhere.com"),
                 "Страница не доступна");
     }
 
     @AfterAll
     static void close()
     {
-        driver.quit();
+        webDriver.quit();
     }
 
-    public static WebDriver getDriver() {
-        return driver;
+    public WebDriver getWebDriver(){
+        return this.webDriver;
     }
 }
