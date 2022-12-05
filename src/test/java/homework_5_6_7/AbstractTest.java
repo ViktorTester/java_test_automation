@@ -1,4 +1,4 @@
-package homework_5;
+package homework_5_6_7;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;

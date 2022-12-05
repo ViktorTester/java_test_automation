@@ -1,14 +1,18 @@
-package homework_5;
+package homework_5_6_7;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import io.qameta.allure.*;
+
 
 
 public class CheckoutFlowTest extends AbstractTest {
 
     @Test
     @DisplayName("Checkout TEST")
+    @Description("The testing of the full checkout process")
+    @Severity(SeverityLevel.CRITICAL)
     void user_checkout() {
         CheckoutFlow checkoutFlow = new CheckoutFlow(getWebDriver());
         checkoutFlow

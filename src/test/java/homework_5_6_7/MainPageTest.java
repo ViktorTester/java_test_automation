@@ -1,8 +1,9 @@
-package homework_5;
+package homework_5_6_7;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import io.qameta.allure.*;
 
 
 
@@ -11,6 +12,8 @@ public class MainPageTest extends AbstractTest {
 
     @Test
     @DisplayName("Review TEST")
+    @Description("The user sending a review testing")
+    @Severity(SeverityLevel.CRITICAL)
     void user_review() {
 
         MainMenu mainMenu = new MainMenu(getWebDriver());
@@ -23,6 +26,8 @@ public class MainPageTest extends AbstractTest {
 
     @Test
     @DisplayName("Basket checkout TEST")
+    @Description("The user is checking products in basket")
+    @Severity(SeverityLevel.CRITICAL)
     void user_add_to_basket() {
 
         MainMenu mainMenu = new MainMenu(getWebDriver());
@@ -39,6 +44,8 @@ public class MainPageTest extends AbstractTest {
 
     @Test
     @DisplayName("Search TEST")
+    @Description("Testing the search field")
+    @Severity(SeverityLevel.NORMAL)
     void user_search() {
 
         MainMenu mainMenu = new MainMenu(getWebDriver());
